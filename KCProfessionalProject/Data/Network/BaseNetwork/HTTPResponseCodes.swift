@@ -1,0 +1,14 @@
+//
+//  HTTPResponseCodes.swift
+//  KCProfessionalProject
+//
+//  Created by Luis Quintero on 30/04/25.
+//
+
+import Foundation
+
+struct HTTPResponseCodes {
+    static let SUCCESS = 200
+    static let NOT_AUTHORIZED = 401
+    static let ERROR = 502
+}

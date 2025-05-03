@@ -1,0 +1,42 @@
+{
+  "originHash" : "7a5d08de4f4334a4ef41337825b9e0dd7867b1a4714a011afbc209bf382821fb",
+  "pins" : [
+    {
+      "identity" : "combinecocoa",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/CombineCommunity/CombineCocoa",
+      "state" : {
+        "revision" : "7300c75ff9e072aa7fd0fccefcc88f74aae9bf56",
+        "version" : "0.4.1"
+      }
+    },
+    {
+      "identity" : "keychain-swift",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/evgenyneu/keychain-swift",
+      "state" : {
+        "revision" : "5e1b02b6a9dac2a759a1d5dbc175c86bd192a608",
+        "version" : "24.0.0"
+      }
+    },
+    {
+      "identity" : "keychainaccess",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/kishikawakatsumi/KeychainAccess.git",
+      "state" : {
+        "revision" : "84e546727d66f1adc5439debad16270d0fdd04e7",
+        "version" : "4.2.2"
+      }
+    },
+    {
+      "identity" : "quinterolibrary",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Quinterock/QuinteroLibrary",
+      "state" : {
+        "branch" : "main",
+        "revision" : "95cbce6ff6916bde9e6806dca079b1b4a4643a94"
+      }
+    }
+  ],
+  "version" : 3
+}

@@ -1,0 +1,11 @@
+/* 
+  Localizable.strings
+  KCProfessionalProject
+
+  Created by Luis Quintero on 30/04/25.
+  
+*/
+
+"email" = "Correo Electrónico";
+"password" = "Clave";
+"login" = "Entrar";
