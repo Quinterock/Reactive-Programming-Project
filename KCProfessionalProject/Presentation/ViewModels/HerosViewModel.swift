@@ -8,6 +8,7 @@
 import Foundation
 import Combine
 
+@MainActor
 final class HerosViewModel: ObservableObject {
     //Lista de heroes
     @Published var heros = [HerosModel]()
@@ -18,16 +19,17 @@ final class HerosViewModel: ObservableObject {
     
     init(useCase: HeroUseCaseProtocol = HeroUseCase()) {
         self.useCaseHeros = useCase
-        Task{
-            await loadHeros()
+        Task{ [weak self] in
+            await self?.loadHeros()
         }
     }
     
     func loadHeros() async {
         let data = await useCaseHeros.getHeros(filter: "")
-        
+        print("Héroes obtenidos: \(data)") // Debug log
         DispatchQueue.main.async {
             self.heros = data
+            print("Héroes actualizados en @Published: \(self.heros)")
         }
     }
 }

@@ -38,10 +38,11 @@
 		33603FF32DC7C91B00B3C3D4 /* HerosRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33603FF22DC7C91B00B3C3D4 /* HerosRepository.swift */; };
 		33603FF52DC7CAD400B3C3D4 /* HeroUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33603FF42DC7CAD400B3C3D4 /* HeroUseCase.swift */; };
 		33603FF72DC7CB5000B3C3D4 /* HerosViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33603FF62DC7CB5000B3C3D4 /* HerosViewModel.swift */; };
-		33603FF92DC7CC2D00B3C3D4 /* HerosTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33603FF82DC7CC2D00B3C3D4 /* HerosTableViewController.swift */; };
 		33603FFD2DC7CD8400B3C3D4 /* HeroTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 33603FFC2DC7CD8400B3C3D4 /* HeroTableViewCell.xib */; };
 		33603FFE2DC7CD8400B3C3D4 /* HeroTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33603FFB2DC7CD8400B3C3D4 /* HeroTableViewCell.swift */; };
 		336040002DC7CF0700B3C3D4 /* UIImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33603FFF2DC7CF0700B3C3D4 /* UIImage+Extensions.swift */; };
+		336040052DC7E3B000B3C3D4 /* HerosTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 336040042DC7E3B000B3C3D4 /* HerosTableViewController.xib */; };
+		336040062DC7E3B000B3C3D4 /* HerosTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 336040032DC7E3B000B3C3D4 /* HerosTableViewController.swift */; };
 		33A6128C2DC6D94400C865B3 /* LoginRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A6128B2DC6D93000C865B3 /* LoginRepositoryProtocol.swift */; };
 /* End PBXBuildFile section */
 
@@ -97,10 +98,11 @@
 		33603FF22DC7C91B00B3C3D4 /* HerosRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HerosRepository.swift; sourceTree = "<group>"; };
 		33603FF42DC7CAD400B3C3D4 /* HeroUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroUseCase.swift; sourceTree = "<group>"; };
 		33603FF62DC7CB5000B3C3D4 /* HerosViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HerosViewModel.swift; sourceTree = "<group>"; };
-		33603FF82DC7CC2D00B3C3D4 /* HerosTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HerosTableViewController.swift; sourceTree = "<group>"; };
 		33603FFB2DC7CD8400B3C3D4 /* HeroTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroTableViewCell.swift; sourceTree = "<group>"; };
 		33603FFC2DC7CD8400B3C3D4 /* HeroTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeroTableViewCell.xib; sourceTree = "<group>"; };
 		33603FFF2DC7CF0700B3C3D4 /* UIImage+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extensions.swift"; sourceTree = "<group>"; };
+		336040032DC7E3B000B3C3D4 /* HerosTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HerosTableViewController.swift; sourceTree = "<group>"; };
+		336040042DC7E3B000B3C3D4 /* HerosTableViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HerosTableViewController.xib; sourceTree = "<group>"; };
 		33A6128B2DC6D93000C865B3 /* LoginRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRepositoryProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -217,7 +219,8 @@
 				33603FFA2DC7CD4B00B3C3D4 /* Cells */,
 				3304B5CA2DC2A8C40020A132 /* HomeViewController.swift */,
 				3304B5CB2DC2A8C40020A132 /* HomeViewController.xib */,
-				33603FF82DC7CC2D00B3C3D4 /* HerosTableViewController.swift */,
+				336040032DC7E3B000B3C3D4 /* HerosTableViewController.swift */,
+				336040042DC7E3B000B3C3D4 /* HerosTableViewController.xib */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -488,6 +491,7 @@
 				3304B5892DC28FC70020A132 /* Assets.xcassets in Resources */,
 				3304B58B2DC28FC70020A132 /* LaunchScreen.storyboard in Resources */,
 				3304B5D02DC2AA940020A132 /* Localizable.strings in Resources */,
+				336040052DC7E3B000B3C3D4 /* HerosTableViewController.xib in Resources */,
 				33603FF12DC7C8B700B3C3D4 /* Heros.json in Resources */,
 				3304B5C82DC2A7100020A132 /* ErrorViewController.xib in Resources */,
 				3304B5CC2DC2A8C40020A132 /* HomeViewController.xib in Resources */,
@@ -532,7 +536,7 @@
 				33A6128C2DC6D94400C865B3 /* LoginRepositoryProtocol.swift in Sources */,
 				3304B5B42DC293AB0020A132 /* EndPoints.swift in Sources */,
 				3304B5A92DC2927F0020A132 /* LoginViewController.swift in Sources */,
-				33603FF92DC7CC2D00B3C3D4 /* HerosTableViewController.swift in Sources */,
+				336040062DC7E3B000B3C3D4 /* HerosTableViewController.swift in Sources */,
 				3304B5BC2DC295DB0020A132 /* NetworkLogin.swift in Sources */,
 				33603FF52DC7CAD400B3C3D4 /* HeroUseCase.swift in Sources */,
 				3304B5A52DC2919B0020A132 /* AppConstants.swift in Sources */,

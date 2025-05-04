@@ -27,23 +27,31 @@ class HerosTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = NSLocalizedString("heros-title", comment: "")
+        
+        // Configuración de la tabla
         tableView.register(UINib(nibName: "HeroTableViewCell", bundle: nil), forCellReuseIdentifier: "Cell")
   //      tableView.refreshControl = UIRefreshControl()
  //       tableView.refreshControl?.addTarget(self, action: #selector(cellPullToRefresh), for: .valueChanged)
+        
+        
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(
-            title: "Cerrar",
+            title: NSLocalizedString("close", comment: "Logout"),
             style: .plain,
             target: self,
             action: #selector(HerosTableViewController.closeSession)
         )
         configViewModel()
+        
+        Task {
+            await vm.loadHeros()
+        }
     }
     
     private func configViewModel() {
         self.vm.$heros
             .receive(on: DispatchQueue.main)
-            .sink { _ in
-                self.tableView.reloadData()
+            .sink { [weak self] _ in
+                self?.tableView.reloadData()
             }
             .store(in: &sucriptors)
     }

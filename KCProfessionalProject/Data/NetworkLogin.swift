@@ -16,10 +16,10 @@ final class NetworkLogin: NetworkLoginProtocol {
         var tokenJWT: String = ""
         
         let url: String = "\(ConstantsApp.CONST_API_URL)\(EndPoints.login.rawValue)"
-        let encodeCredentials = "\(user): \(password)".data(using: .utf8)?.base64EncodedString()
+        let encodeCredentials = "\(user):\(password)".data(using: .utf8)?.base64EncodedString()
         var segCredentials: String = ""
-        if let encodeCredentials {
-            segCredentials = "Basic \(encodeCredentials)"
+        if let credentials = encodeCredentials {
+            segCredentials = "Basic \(credentials)"
         }
         
         var request: URLRequest = URLRequest(url: URL(string: url)!)

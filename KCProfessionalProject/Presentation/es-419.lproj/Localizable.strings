@@ -12,3 +12,4 @@
 "heros-title" = "Lista de Heros";
 "error-message" = "Contraseña o usuario incorrectos";
 "error-button" = "Volver al login";
+"close" = "Cerrar Sesión";

@@ -12,3 +12,4 @@
 "heros-title" = "Heros list";
 "error-message" = "Wrong password or user";
 "error-button" = "Back to login";
+"close" = "Logout";

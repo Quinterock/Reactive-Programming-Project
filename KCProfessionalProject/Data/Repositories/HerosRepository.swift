@@ -31,8 +31,4 @@ final class HerosRepositoryFake: HerosRepositoryProtocol {
     func getHeros(filter: String) async -> [HerosModel] {
         return await network.getHeros(filter: filter)
     }
-    
-    
-    
-    
 }
