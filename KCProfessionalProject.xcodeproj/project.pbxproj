@@ -43,6 +43,7 @@
 		336040002DC7CF0700B3C3D4 /* UIImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33603FFF2DC7CF0700B3C3D4 /* UIImage+Extensions.swift */; };
 		336040052DC7E3B000B3C3D4 /* HerosTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 336040042DC7E3B000B3C3D4 /* HerosTableViewController.xib */; };
 		336040062DC7E3B000B3C3D4 /* HerosTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 336040032DC7E3B000B3C3D4 /* HerosTableViewController.swift */; };
+		336040092DC8188200B3C3D4 /* TransformationsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 336040082DC8188200B3C3D4 /* TransformationsModel.swift */; };
 		33A6128C2DC6D94400C865B3 /* LoginRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A6128B2DC6D93000C865B3 /* LoginRepositoryProtocol.swift */; };
 /* End PBXBuildFile section */
 
@@ -103,6 +104,7 @@
 		33603FFF2DC7CF0700B3C3D4 /* UIImage+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extensions.swift"; sourceTree = "<group>"; };
 		336040032DC7E3B000B3C3D4 /* HerosTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HerosTableViewController.swift; sourceTree = "<group>"; };
 		336040042DC7E3B000B3C3D4 /* HerosTableViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HerosTableViewController.xib; sourceTree = "<group>"; };
+		336040082DC8188200B3C3D4 /* TransformationsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransformationsModel.swift; sourceTree = "<group>"; };
 		33A6128B2DC6D93000C865B3 /* LoginRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRepositoryProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -340,6 +342,7 @@
 			isa = PBXGroup;
 			children = (
 				33603FEB2DC7C65300B3C3D4 /* HerosModel.swift */,
+				336040082DC8188200B3C3D4 /* TransformationsModel.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -534,6 +537,7 @@
 				3304B5B22DC2939A0020A132 /* HTTPMethods.swift in Sources */,
 				3304B5B62DC293CB0020A132 /* AppState.swift in Sources */,
 				33A6128C2DC6D94400C865B3 /* LoginRepositoryProtocol.swift in Sources */,
+				336040092DC8188200B3C3D4 /* TransformationsModel.swift in Sources */,
 				3304B5B42DC293AB0020A132 /* EndPoints.swift in Sources */,
 				3304B5A92DC2927F0020A132 /* LoginViewController.swift in Sources */,
 				336040062DC7E3B000B3C3D4 /* HerosTableViewController.swift in Sources */,
