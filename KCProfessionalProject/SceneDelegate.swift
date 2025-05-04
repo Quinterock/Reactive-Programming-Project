@@ -39,8 +39,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                         print("Vamos a la home")
                         print("login")
                         nav = UINavigationController(
-                            rootViewController: HomeViewController(
-                                appState: self.appState
+                            rootViewController: HerosTableViewController(
+                                appState: self.appState,
+                                viewModel: HerosViewModel()
                             )
                         )
                         self.window?.rootViewController = nav
