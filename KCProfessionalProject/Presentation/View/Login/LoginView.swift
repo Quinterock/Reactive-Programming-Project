@@ -28,7 +28,9 @@ final class LoginView: UIView {
         textfield.font = .systemFont(ofSize: 18)
         textfield.borderStyle = .roundedRect
         textfield.translatesAutoresizingMaskIntoConstraints = false
-        textfield.placeholder = "Email"
+        textfield.placeholder = NSLocalizedString("email", comment: "")
+        textfield.autocapitalizationType = .none
+        textfield.autocorrectionType = .no
         textfield.layer.cornerRadius = 10
         textfield.layer.masksToBounds = true //Para que se vean las esquinas redondeadas
         // Color texto del placeholder
@@ -45,7 +47,7 @@ final class LoginView: UIView {
         textfield.borderStyle = .roundedRect
         textfield.isSecureTextEntry = true
         textfield.translatesAutoresizingMaskIntoConstraints = false
-        textfield.placeholder = "Password"
+        textfield.placeholder = NSLocalizedString("password", comment: "")
         textfield.layer.cornerRadius = 10
         textfield.layer.masksToBounds = true //Para que se vean las esquinas redondeadas
         // Color texto del placeholder
@@ -55,8 +57,11 @@ final class LoginView: UIView {
     }()
     
     let buttonLogin = {
-       let button = UIButton()
-        button.setTitle("Login", for: .normal)
+        let button = UIButton(type: .system)
+        button.setTitle(
+            NSLocalizedString("login", comment: ""),
+            for: .normal
+        )
         button.backgroundColor = .blue.withAlphaComponent(0.9)
         button.setTitleColor(.white, for: .normal)
         button.setTitleColor(.gray, for: .disabled)

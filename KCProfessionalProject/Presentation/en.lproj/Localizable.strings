@@ -6,6 +6,9 @@
   
 */
 
-"email" = "Correo Electrónico";
-"password" = "Clave";
-"login" = "Entrar";
+"email" = "E-mail";
+"password" = "Password";
+"login" = "Login";
+"heros-title" = "Heros list";
+"error-message" = "Wrong password or user";
+"error-button" = "Back to login";

@@ -35,9 +35,29 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                         self.window!.makeKeyAndVisible()
                     }
                 case .success:
-                    print("Vamos a la home")
+                    DispatchQueue.main.async {
+                        print("Vamos a la home")
+                        print("login")
+                        nav = UINavigationController(
+                            rootViewController: HomeViewController(
+                                appState: self.appState
+                            )
+                        )
+                        self.window?.rootViewController = nav
+                        self.window!.makeKeyAndVisible()
+                    }
                 case .error:
-                    print("Pantalla de error")
+                    DispatchQueue.main.async {
+                        print("login")
+                        nav = UINavigationController(
+                            rootViewController: ErrorViewController(
+                                appState: self.appState,
+                                error: "Error en el login usuario/clave"
+                            )
+                        )
+                        self.window?.rootViewController = nav
+                        self.window!.makeKeyAndVisible()
+                    }
                 }
             }
     }

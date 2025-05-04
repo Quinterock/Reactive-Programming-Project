@@ -19,7 +19,9 @@ class HomeViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
-    
+    @IBAction func closeSession(_ sender: Any) {
+        self.appState?.closeSessionUser()
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()

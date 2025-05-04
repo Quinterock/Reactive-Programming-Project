@@ -35,7 +35,7 @@ final class LoginViewController: UIViewController {
         loginButton.isEnabled = false
         // Do any additional setup after loading the view.
     }
-
+    
     //Lo primero que se carga, para editar xib
     override func loadView() {
         //Instancion la clase que va a generar la UI
@@ -50,66 +50,64 @@ final class LoginViewController: UIViewController {
     }
     
     var suscriptions = Set<AnyCancellable>()
-        
-        private var password: String = ""
-        private var user: String = ""
-        
-        // MARK: -  Private
-        
-        private func bindUI() {
-            suscribeUserText()
-            suscribePassword()
-            suscribeButton()
-        }
-        
-        //Suscriptions
-        
-        private func suscribeButton() {
-            self.loginButton.tapPublisher
-                .receive(on: DispatchQueue.main)
-                .sink { [weak self] _ in
-                    if let user = self?.user,
-                       let pass = self?.password,
-                       pass.count > 0 {
-                        print("Llamando al loginc con usuario: \(user) y clave: \(pass)")
-                    } else {
-                        print("No hacer nada")
-                    }
+    
+    private var password: String = ""
+    private var user: String = ""
+    
+    // MARK: -  Private
+    
+    private func bindUI() {
+        suscribeUserText()
+        suscribePassword()
+        suscribeButton()
+    }
+    
+    //Suscriptions
+    private func suscribeUserText() {
+        self.emailTextfield.textPublisher
+            .receive(on: DispatchQueue.main)
+            .debounce(for: .seconds(0.8), scheduler: RunLoop.main)
+            .compactMap{$0}
+            .sink { [weak self] userText in
+                print("User: \(userText)")
+                self?.user = userText
+                self?.enableButtonIfNeeded(userText)
+            }
+            .store(in: &suscriptions)
+    }
+    
+    private func suscribePassword() {
+        self.passwordTexfield.textPublisher
+            .receive(on: DispatchQueue.main)
+            .debounce(for: .seconds(0.8), scheduler: RunLoop.main)
+            .sink { [weak self] password in
+                if let password {
+                    print("Password: \(password)")
+                    self?.password = password
                 }
-                .store(in: &suscriptions)
-        }
-        
-        private func suscribeUserText() {
-            self.emailTextfield.textPublisher
-                .receive(on: DispatchQueue.main)
-                .debounce(for: .seconds(0.8), scheduler: RunLoop.main)
-                .compactMap{$0}
-                .sink { [weak self] userText in
-                    print("User: \(userText)")
-                    self?.user = userText
-                    self?.enableButtonIfNeeded(userText)
+            }
+            .store(in: &suscriptions)
+    }
+    
+    private func suscribeButton() {
+        self.loginButton.tapPublisher
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] _ in
+                if let user = self?.user,
+                   let pass = self?.password,
+                   pass.count > 0 {
+                    self?.appState?.loginApp(user: user, pass: pass)
+                } else {
+                    print("No hacer nada")
                 }
-                .store(in: &suscriptions)
-        }
+            }
+            .store(in: &suscriptions)
+    }
 
-        
-        private func suscribePassword() {
-            self.passwordTexfield.textPublisher
-                .receive(on: DispatchQueue.main)
-                .debounce(for: .seconds(0.8), scheduler: RunLoop.main)
-                .sink { [weak self] password in
-                    if let password {
-                        print("Password: \(password)")
-                        self?.password = password
-                    }
-                }
-                .store(in: &suscriptions)
-        }
-        
-        // Validation
-        
-        private func enableButtonIfNeeded(_ userText: String) {
-            self.loginButton.isEnabled = userText.count >= 5
-        }
+    // Validation
+    
+    private func enableButtonIfNeeded(_ userText: String) {
+        self.loginButton.isEnabled = userText.count >= 5
+    }
     
 }
