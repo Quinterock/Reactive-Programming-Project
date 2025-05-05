@@ -17,6 +17,8 @@ class HeroDetailViewController: UIViewController {
     @IBOutlet weak var heroNameLabel: UILabel!
     @IBOutlet weak var heroDescriptionLabel: UITextView!
     
+    @IBOutlet weak var transformationCollectionView: UICollectionView!
+    
     // Inits
     init(viewModel: HeroDetailViewModel) {
         self.viewModel = viewModel
@@ -36,6 +38,15 @@ class HeroDetailViewController: UIViewController {
         }
     }
     
+    // CollectionView
+    private func setupUI() {
+            // Configurar la UICollectionView
+            let nib = UINib(nibName: "TransformationCollectionViewCell", bundle: nil)
+            transformationCollectionView.register(nib, forCellWithReuseIdentifier: "TransformationCollectionViewCell")
+            transformationCollectionView.dataSource = self
+            transformationCollectionView.delegate = self
+        }
+    
     // Observar cambios en el estado del ViewModel y actualizar la UI de manera reactiva
     private func setupBindings() {
         viewModel.$hero
@@ -49,5 +60,63 @@ class HeroDetailViewController: UIViewController {
                 }
             }
             .store(in: &cancellables)
+        
+        // Vincular transformaciones
+                viewModel.$transformations
+                    .receive(on: DispatchQueue.main)
+                    .sink { [weak self] _ in
+                        self?.transformationCollectionView.reloadData()
+                    }
+                    .store(in: &cancellables)
+
+                // Manejar errores
+                viewModel.$errorMessage
+                    .receive(on: DispatchQueue.main)
+                    .sink { [weak self] errorMessage in
+                        if let message = errorMessage {
+                            self?.showErrorAlert(message: message)
+                        }
+                    }
+                    .store(in: &cancellables)
     }
 }
+
+// MARK: - UICollectionView DataSource
+extension HeroDetailViewController: UICollectionViewDataSource, UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return viewModel.transformations.count
+    }
+
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TransformationCollectionViewCell", for: indexPath) as? TransformationCollectionViewCell else {
+            return UICollectionViewCell()
+        }
+        let transformation = viewModel.transformations[indexPath.row]
+        cell.configure(with: transformation)
+        return cell
+    }
+}
+
+extension HeroDetailViewController {
+    func showErrorAlert(message: String) {
+        let alert = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        present(alert, animated: true, completion: nil)
+    }
+}
+
+//// MARK: - UICollectionView DataSource y Delegate
+//extension HeroDetailViewController: UICollectionViewDataSource, UICollectionViewDelegate {
+//    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+//        return viewModel.transformations.count
+//    }
+//
+//    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+//        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TransformationCollectionViewCell", for: indexPath) as? TransformationCollectionViewCell else {
+//            return UICollectionViewCell()
+//        }
+//        let transformation = viewModel.transformations[indexPath.row]
+//        cell.configure(with: transformation)
+//        return cell
+//    }
+//}

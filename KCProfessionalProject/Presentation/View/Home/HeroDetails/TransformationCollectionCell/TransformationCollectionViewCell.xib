@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="TransformationCollectionViewCell" customModule="KCProfessionalProject" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="430" height="139"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="430" height="139"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ZY2-2x-TPP">
+                        <rect key="frame" x="0.0" y="0.0" width="157" height="139"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="157" id="9Ez-E8-tJa"/>
+                            <constraint firstAttribute="height" constant="139" id="mcz-7m-jI3"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fmg-gk-kkA">
+                        <rect key="frame" x="194" y="59" width="182" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstItem="ZY2-2x-TPP" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="4JO-wj-9Yt"/>
+                <constraint firstAttribute="bottom" secondItem="fmg-gk-kkA" secondAttribute="bottom" constant="59" id="837-Ri-YhG"/>
+                <constraint firstItem="fmg-gk-kkA" firstAttribute="leading" secondItem="ZY2-2x-TPP" secondAttribute="trailing" constant="37" id="Ew0-wB-g1T"/>
+                <constraint firstAttribute="trailing" secondItem="fmg-gk-kkA" secondAttribute="trailing" constant="54" id="OHM-do-FNw"/>
+                <constraint firstItem="ZY2-2x-TPP" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="fOA-4p-4Ng"/>
+                <constraint firstItem="fmg-gk-kkA" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="59" id="gKr-dr-a82"/>
+                <constraint firstAttribute="bottom" secondItem="ZY2-2x-TPP" secondAttribute="bottom" id="p6l-OH-3jL"/>
+            </constraints>
+            <size key="customSize" width="430" height="139"/>
+            <connections>
+                <outlet property="transformationImageView" destination="ZY2-2x-TPP" id="aKg-RL-CNi"/>
+                <outlet property="transformationNameLabel" destination="fmg-gk-kkA" id="9iW-CN-ktG"/>
+            </connections>
+            <point key="canvasLocation" x="326.71755725190837" y="19.366197183098592"/>
+        </collectionViewCell>
+    </objects>
+</document>

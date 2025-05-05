@@ -13,6 +13,7 @@ struct TransformationsModel: Codable {
     let description: String
     let photo: String
     let name: String
+    let hero: HerosModel?
 }
 
 

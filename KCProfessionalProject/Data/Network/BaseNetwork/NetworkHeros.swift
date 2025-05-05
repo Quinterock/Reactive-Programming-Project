@@ -30,9 +30,7 @@ final class NetworkHeros: NetworkHerosProtocol{
         }
         
         //Call to server
-        
         do{
-            
             let (data, response) = try await URLSession.shared.data(for: request)
             
             // Asegurarnos que la respuesta sea HTTPURLResponse y que sea correcta
