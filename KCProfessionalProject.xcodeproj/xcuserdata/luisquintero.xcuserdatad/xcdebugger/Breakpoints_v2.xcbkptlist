@@ -50,36 +50,6 @@
             endingLineNumber = "27"
             landmarkName = "loadHeros()"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "6A0C8E87-012C-4349-B823-4D141B5941FE - 16b6665a2cd715b7"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "KCProfessionalProject.HerosViewModel.loadHeros() async -&gt; ()"
-                  moduleName = "KCProfessionalProject.debug.dylib"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/luisquintero/Desktop/Practica%20asincronismo/KCProfessionalProject/Presentation/ViewModels/HerosViewModel.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "27"
-                  endingLineNumber = "27">
-               </Location>
-               <Location
-                  uuid = "6A0C8E87-012C-4349-B823-4D141B5941FE - d67f547ad04ebad"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(1) suspend resume partial function for KCProfessionalProject.HerosViewModel.loadHeros() async -&gt; ()"
-                  moduleName = "KCProfessionalProject.debug.dylib"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/luisquintero/Desktop/Practica%20asincronismo/KCProfessionalProject/Presentation/ViewModels/HerosViewModel.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "27"
-                  endingLineNumber = "27">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -102,14 +72,14 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "BD0AA011-2854-4510-8930-47DDB18EF456"
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "KCProfessionalProject/Presentation/View/Home/HerosTableViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "64"
-            endingLineNumber = "64"
+            startingLineNumber = "59"
+            endingLineNumber = "59"
             landmarkName = "tableView(_:numberOfRowsInSection:)"
             landmarkType = "7">
          </BreakpointContent>

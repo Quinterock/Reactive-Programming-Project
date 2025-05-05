@@ -10,7 +10,7 @@ import UIKit
 class HomeViewController: UIViewController {
     private var appState: AppState?
     
-    init(appState: AppState? = nil) {
+    init(appState: AppState) {
         self.appState = appState
         super.init(nibName: nil, bundle: nil)
     }
@@ -19,12 +19,15 @@ class HomeViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        
+    }
+    
     @IBAction func closeSession(_ sender: Any) {
         self.appState?.closeSessionUser()
     }
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-    }
+    
 }

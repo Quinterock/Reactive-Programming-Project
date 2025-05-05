@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HeroDetailViewController" customModule="KCProfessionalProject" customModuleProvider="target">
+            <connections>
+                <outlet property="heroDescriptionLabel" destination="jF5-MB-b3r" id="o8a-Oh-RAh"/>
+                <outlet property="heroImageView" destination="OM8-Q6-g1Q" id="Hm4-HP-QD5"/>
+                <outlet property="heroNameLabel" destination="lHj-Eg-dQt" id="CKj-b0-dfj"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="OM8-Q6-g1Q">
+                    <rect key="frame" x="0.0" y="79" width="400" height="200"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="400" id="3Xv-bI-y3s"/>
+                        <constraint firstAttribute="height" constant="200" id="7Oc-mj-XQB"/>
+                    </constraints>
+                </imageView>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="jF5-MB-b3r">
+                    <rect key="frame" x="12" y="362" width="376" height="200"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="200" id="FQ7-Ue-QVR"/>
+                    </constraints>
+                    <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                    <color key="textColor" systemColor="labelColor"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                </textView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lHj-Eg-dQt">
+                    <rect key="frame" x="16" y="304" width="368" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="jF5-MB-b3r" firstAttribute="top" secondItem="lHj-Eg-dQt" secondAttribute="bottom" constant="37" id="1ki-dP-6AK"/>
+                <constraint firstItem="OM8-Q6-g1Q" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="HUy-aD-Fwt"/>
+                <constraint firstItem="jF5-MB-b3r" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="12" id="MIr-Du-qWS"/>
+                <constraint firstItem="OM8-Q6-g1Q" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="N2S-9a-KaW"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="jF5-MB-b3r" secondAttribute="trailing" constant="12" id="Ncl-Is-PiP"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="lHj-Eg-dQt" secondAttribute="trailing" constant="16" id="Vov-yT-HZf"/>
+                <constraint firstItem="lHj-Eg-dQt" firstAttribute="top" secondItem="OM8-Q6-g1Q" secondAttribute="bottom" constant="25" id="g7T-Hl-DL0"/>
+                <constraint firstItem="lHj-Eg-dQt" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="pe4-dx-eB8"/>
+                <constraint firstItem="OM8-Q6-g1Q" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="20" id="rFZ-zx-eQ4"/>
+                <constraint firstItem="OM8-Q6-g1Q" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="wbc-h6-eHw"/>
+            </constraints>
+            <point key="canvasLocation" x="130.53435114503816" y="-11.267605633802818"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

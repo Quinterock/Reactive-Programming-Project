@@ -6,3 +6,17 @@
 //
 
 import Foundation
+
+
+struct TransformationsModel: Codable {
+    let id: UUID
+    let description: String
+    let photo: String
+    let name: String
+}
+
+
+// Filter the request of Transformations by name
+struct TransformationModelRequest: Codable {
+    let name: String
+}

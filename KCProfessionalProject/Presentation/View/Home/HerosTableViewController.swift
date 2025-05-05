@@ -27,13 +27,9 @@ class HerosTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = NSLocalizedString("heros-title", comment: "")
-        
-        // Configuración de la tabla
-        tableView.register(UINib(nibName: "HeroTableViewCell", bundle: nil), forCellReuseIdentifier: "Cell")
+        tableView.register(UINib(nibName: "HeroTableViewCell", bundle: nil), forCellReuseIdentifier: "Cell") // Configuración de la tabla
   //      tableView.refreshControl = UIRefreshControl()
  //       tableView.refreshControl?.addTarget(self, action: #selector(cellPullToRefresh), for: .valueChanged)
-        
-        
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(
             title: NSLocalizedString("close", comment: "Logout"),
             style: .plain,
@@ -41,17 +37,16 @@ class HerosTableViewController: UITableViewController {
             action: #selector(HerosTableViewController.closeSession)
         )
         configViewModel()
-        
-        Task {
-            await vm.loadHeros()
-        }
+//        
+//        Task {
+//            await vm.loadHeros()
+//        }
     }
-    
     private func configViewModel() {
         self.vm.$heros
             .receive(on: DispatchQueue.main)
-            .sink { [weak self] _ in
-                self?.tableView.reloadData()
+            .sink { _ in
+                self.tableView.reloadData()
             }
             .store(in: &sucriptors)
     }
@@ -80,6 +75,15 @@ class HerosTableViewController: UITableViewController {
     
     @objc func closeSession(_ : UIBarButtonItem) {
         self.appState?.closeSessionUser()
+    }
+    
+    // Para HeroDetailViewController
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let selectedHero = vm.heros[indexPath.row]
+        let detailViewModel = HeroDetailViewModel(heroId: selectedHero.id)
+        let detailViewController = HeroDetailViewController(viewModel: detailViewModel)
+        navigationController?.pushViewController(detailViewController, animated: true)
     }
 
 }

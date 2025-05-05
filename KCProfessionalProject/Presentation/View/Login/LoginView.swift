@@ -36,6 +36,7 @@ final class LoginView: UIView {
         // Color texto del placeholder
         textfield.attributedPlaceholder = NSAttributedString(
             string: textfield.placeholder!, attributes: [NSAttributedString.Key.foregroundColor: UIColor.gray])
+//        textfield.text = "luisgqr@1975.com"
         return textfield
     }()
     
@@ -53,6 +54,7 @@ final class LoginView: UIView {
         // Color texto del placeholder
         textfield.attributedPlaceholder = NSAttributedString(
             string: textfield.placeholder!, attributes: [NSAttributedString.Key.foregroundColor: UIColor.gray])
+//        textfield.text = "abcdef"
         return textfield
     }()
     

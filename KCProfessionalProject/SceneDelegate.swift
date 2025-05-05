@@ -11,7 +11,7 @@ import Combine
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
-    var appState: AppState = AppState(loginUseCase: FakeLoginUseCase()) // ViewModel global de toda la app
+    var appState: AppState = AppState() // ViewModel global de toda la app
     var cancellable: AnyCancellable?
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
@@ -37,7 +37,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                 case .success:
                     DispatchQueue.main.async {
                         print("Vamos a la home")
-                        print("login")
                         nav = UINavigationController(
                             rootViewController: HerosTableViewController(
                                 appState: self.appState,
@@ -49,11 +48,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                     }
                 case .error:
                     DispatchQueue.main.async {
-                        print("login")
+                        print("error")
                         nav = UINavigationController(
                             rootViewController: ErrorViewController(
                                 appState: self.appState,
-                                error: "Error en el login usuario/clave"
+                                error: NSLocalizedString("error-message", comment: "")
                             )
                         )
                         self.window?.rootViewController = nav
