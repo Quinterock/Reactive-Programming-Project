@@ -10,7 +10,7 @@ import Foundation
 // MARK: - Protocol
 protocol TransformationUseCaseProtocol {
     var repo: TransformationsRepositoryProtocol { get set }
-    func getTransformations(for heroId: UUID) async -> [TransformationsModel]
+    func getTransformations(for heroId: String) async -> [TransformationsModel]
 }
 
 // MARK: - Implementation
@@ -21,7 +21,7 @@ final class TransformationUseCase: TransformationUseCaseProtocol {
         self.repo = repo
     }
     
-    func getTransformations(for heroId: UUID) async -> [TransformationsModel] {
+    func getTransformations(for heroId: String) async -> [TransformationsModel] {
         return await repo.getTransformations(heroId: heroId)
     }
 }

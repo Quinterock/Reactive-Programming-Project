@@ -342,6 +342,7 @@
 				3304B5B32DC293A80020A132 /* EndPoints.swift */,
 				3304B5B12DC293910020A132 /* HTTPMethods.swift */,
 				3304B5AE2DC293490020A132 /* HTTPResponseCodes.swift */,
+				33CF18132DC95F440002AD5A /* NetworkTransformations.swift */,
 				3304B5AC2DC293250020A132 /* NetworkHeros.swift */,
 			);
 			path = BaseNetwork;
@@ -402,7 +403,6 @@
 		33CF18122DC95F340002AD5A /* TransformationsNetwork */ = {
 			isa = PBXGroup;
 			children = (
-				33CF18132DC95F440002AD5A /* NetworkTransformations.swift */,
 			);
 			path = TransformationsNetwork;
 			sourceTree = "<group>";

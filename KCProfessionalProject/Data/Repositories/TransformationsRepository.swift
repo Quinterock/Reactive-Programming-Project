@@ -14,7 +14,7 @@ final class TransformationsRepository: TransformationsRepositoryProtocol {
         self.networkTransformations = networkTransformations
     }
 
-    func getTransformations(heroId: UUID) async -> [TransformationsModel] {
+    func getTransformations(heroId: String) async -> [TransformationsModel] {
         return await networkTransformations.getTransformations(heroId: heroId)
     }
 }

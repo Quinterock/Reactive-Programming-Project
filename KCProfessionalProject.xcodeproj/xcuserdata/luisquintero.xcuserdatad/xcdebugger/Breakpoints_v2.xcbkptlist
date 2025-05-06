@@ -94,8 +94,8 @@
             filePath = "KCProfessionalProject/Presentation/ViewModels/HerosViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "32"
-            endingLineNumber = "32"
+            startingLineNumber = "38"
+            endingLineNumber = "38"
             landmarkName = "loadHeros()"
             landmarkType = "7">
          </BreakpointContent>

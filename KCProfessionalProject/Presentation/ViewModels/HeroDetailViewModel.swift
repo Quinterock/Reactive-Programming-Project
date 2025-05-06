@@ -14,10 +14,10 @@ final class HeroDetailViewModel: ObservableObject {
     
     private let transformationsUseCase: TransformationUseCaseProtocol
     private let useCase: HeroUseCaseProtocol
-    private let heroId: UUID
+    private let heroId: String // -------------
     private var cancellables = Set<AnyCancellable>()
     
-    init(heroId: UUID,
+    init(heroId: String,
          useCase: HeroUseCaseProtocol = HeroUseCase(),
          transformationsUseCase: TransformationUseCaseProtocol = TransformationUseCase()) {
         self.heroId = heroId
@@ -31,20 +31,17 @@ final class HeroDetailViewModel: ObservableObject {
             DispatchQueue.main.async {
                 self.hero = selectedHero
             }
+            print("Héroe seleccionado: \(selectedHero.name), ID: \(selectedHero.id)")
+            print("Loading transformations for hero ID: \(selectedHero.id)")
             await loadTransformations(for: selectedHero.id)
         }
     }
-    private func loadTransformations(for heroId: UUID) async {
-        // Usar un ID no UUID para pruebas
-        let fixedHeroId = "D13A40E5-4418-4223-9CE6-D2F9A28EBE94" // Cambiar "abcd" al ID deseado
-        print("Loading transformations for hero ID: \(fixedHeroId)") // Debug print
+    
+    private func loadTransformations(for heroId: String) async {
+        print("Loading transformations for hero ID: \(heroId)") // Debug print
         
         do {
-            let fetchedTransformations = await transformationsUseCase.getTransformations(for: UUID(uuidString: fixedHeroId) ?? heroId) // Cambiar lógica si es necesario
-            print("XXXXXXXXX")
-            print()
-            print("Loading transformations for hero ID: \(heroId)")
-            print("Transformations fetched: \(fetchedTransformations.count)")
+            let fetchedTransformations = await transformationsUseCase.getTransformations(for: heroId)
             print("Transformations fetched: \(fetchedTransformations.count)") // Debug print
             DispatchQueue.main.async {
                 self.transformations = fetchedTransformations
@@ -56,17 +53,55 @@ final class HeroDetailViewModel: ObservableObject {
             }
         }
     }
-    //    private func loadTransformations(for heroId: UUID) async {
-    //            let fetchedTransformations = await transformationsUseCase.getTransformations(for: heroId)
-    //        print("XXXXXXXXX")
-    //        print()
-    //        print("Loading transformations for hero ID: \(heroId)")
-    //        print("Transformations fetched: \(fetchedTransformations.count)")
-    //            DispatchQueue.main.async {
-    //                self.transformations = fetchedTransformations
-    //            }
-    //    }
+
 }
+
+
+
+
+
+/*
+ private func loadTransformations(for heroId: UUID) async {
+     // Usar un ID no UUID para pruebas
+     let fixedHeroId = "D13A40E5-4418-4223-9CE6-D2F9A28EBE94" // Cambiar "abcd" al ID deseado
+     print("Loading transformations for hero ID: \(fixedHeroId)") // Debug print
+     
+     do {
+         let fetchedTransformations = await transformationsUseCase.getTransformations(for: UUID(uuidString: fixedHeroId) ?? heroId) // Cambiar lógica si es necesario
+         print("XXXXXXXXX")
+         print()
+         print("Loading transformations for hero ID: \(heroId)")
+         print("Transformations fetched: \(fetchedTransformations.count)")
+         print("Transformations fetched: \(fetchedTransformations.count)") // Debug print
+         DispatchQueue.main.async {
+             self.transformations = fetchedTransformations
+         }
+     } catch {
+         DispatchQueue.main.async {
+             self.errorMessage = "Error al cargar las transformaciones: \(error.localizedDescription)"
+             print("Error fetching transformations: \(error.localizedDescription)")
+         }
+     }
+ }
+ */
+
+
+
+
+
+
+
+//    private func loadTransformations(for heroId: UUID) async {
+//            let fetchedTransformations = await transformationsUseCase.getTransformations(for: heroId)
+//        print("XXXXXXXXX")
+//        print()
+//        print("Loading transformations for hero ID: \(heroId)")
+//        print("Transformations fetched: \(fetchedTransformations.count)")
+//            DispatchQueue.main.async {
+//                self.transformations = fetchedTransformations
+//            }
+//    }
+
 
 
 

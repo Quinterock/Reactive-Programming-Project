@@ -9,7 +9,7 @@ import Foundation
 
 
 struct TransformationsModel: Codable {
-    let id: UUID
+    let id: String
     let description: String
     let photo: String
     let name: String

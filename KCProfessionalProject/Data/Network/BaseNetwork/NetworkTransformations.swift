@@ -10,7 +10,7 @@ import QuinteroLibrary
 
 protocol NetworkTransformationsProtocol {
     func getHeros(filter: String) async -> [HerosModel]
-    func getTransformations(heroId: UUID) async -> [TransformationsModel]
+    func getTransformations(heroId: String) async -> [TransformationsModel]
 }
 
 final class NetworkTransformations: NetworkTransformationsProtocol {
@@ -23,6 +23,10 @@ final class NetworkTransformations: NetworkTransformationsProtocol {
         request.httpBody = try? JSONEncoder().encode(HeroModelRequest(name: filter))
         request.addValue(HTTPMethods.content, forHTTPHeaderField: "Content-type")
     
+        print()
+        print("urlhero:\(url) requestHero\(request), filter: \(filter), name: \(modelReturn)")
+        print()
+        
         // Token JWT (extraer de aquí o usar un interceptor genérico)
         let jwtToken = KeyChainManager.shared.getKC(key: ConstantsApp.CONST_TOKEN_ID_KEYCHAIN)
         if let tokenJWT = jwtToken {
@@ -37,6 +41,9 @@ final class NetworkTransformations: NetworkTransformationsProtocol {
             if let resp = response as? HTTPURLResponse {
                 if resp.statusCode == HTTPResponseCodes.SUCCESS {
                     modelReturn = try JSONDecoder().decode([HerosModel].self, from: data)
+                    print()
+                    print("urlhero:\(url) requestHero\(request), filter: \(filter), name: \(modelReturn)")
+                    print()
                 }
             }
         } catch {
@@ -47,15 +54,20 @@ final class NetworkTransformations: NetworkTransformationsProtocol {
         return modelReturn
     }
     
-    func getTransformations(heroId: UUID) async -> [TransformationsModel] {
+    func getTransformations(heroId: String) async -> [TransformationsModel] {
         var modelReturn = [TransformationsModel]()
         
         let url: String = "\(ConstantsApp.CONST_API_URL)\(EndPoints.transformations.rawValue)"
         var request: URLRequest = URLRequest(url: URL(string: url)!)
         request.httpMethod = HTTPMethods.post
-        request.httpBody = try? JSONEncoder().encode(["heroId": heroId.uuidString]) // Cuerpo de la solicitud con el ID del héroe
+        request.httpBody = try? JSONEncoder().encode(["heroId": heroId]) // Cuerpo de la solicitud con el ID del héroe
+        
         request.addValue(HTTPMethods.content, forHTTPHeaderField: "Content-type")
-    
+        
+        print()
+        print("request\(request), heroId: \(heroId)")
+        print()
+        
         // Token JWT (extraer de aquí o usar un interceptor genérico)
         let jwtToken = KeyChainManager.shared.getKC(key: ConstantsApp.CONST_TOKEN_ID_KEYCHAIN)
         if let tokenJWT = jwtToken {
