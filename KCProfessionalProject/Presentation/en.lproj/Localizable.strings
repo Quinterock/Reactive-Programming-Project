@@ -13,3 +13,4 @@
 "error-message" = "Wrong password or user";
 "error-button" = "Back to login";
 "close" = "Logout";
+"hero-details" = "Hero Details";

@@ -9,7 +9,8 @@
 "email" = "Correo Electrónico";
 "password" = "Clave";
 "login" = "Entrar";
-"heros-title" = "Lista de Heros";
+"heros-title" = "Lista de Héroes";
 "error-message" = "Contraseña o usuario incorrectos";
 "error-button" = "Volver al login";
 "close" = "Cerrar Sesión";
+"hero-details" = "Detalles del Héroe";

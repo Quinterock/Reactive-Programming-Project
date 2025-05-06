@@ -32,6 +32,7 @@ class HeroDetailViewController: UIViewController {
     // viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = NSLocalizedString("hero-details", comment: "Detalles del Héroe")
         setupBindings()
         Task {
             await viewModel.loadHeroDetails()
