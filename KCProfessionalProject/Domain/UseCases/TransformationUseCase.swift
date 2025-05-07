@@ -27,14 +27,14 @@ final class TransformationUseCase: TransformationUseCaseProtocol {
 }
 
 
-//final class FakeTransformationUseCase: TransformationUseCaseProtocol {
-//    var repo: TransformationsRepositoryProtocol
-//    
-//    init(repo: TransformationsRepositoryProtocol = TransformationsRepositoryFake()) {
-//        self.repo = repo
-//    }
-//    
-//    func getTransformations(for heroId: UUID) async -> [TransformationsModel] {
-//        return await repo.getTransformations(heroId: heroId)
-//    }
-//}
+final class FakeTransformationUseCase: TransformationUseCaseProtocol {
+    var repo: TransformationsRepositoryProtocol
+    
+    init(repo: TransformationsRepositoryProtocol = TransformationsRepositoryFake()) {
+        self.repo = repo
+    }
+    
+    func getTransformations(for heroId: String) async -> [TransformationsModel] {
+        return await repo.getTransformations(heroId: heroId)
+    }
+}

@@ -338,7 +338,6 @@
 		3304B5A22DC290F90020A132 /* BaseNetwork */ = {
 			isa = PBXGroup;
 			children = (
-				33CF18122DC95F340002AD5A /* TransformationsNetwork */,
 				3304B5B32DC293A80020A132 /* EndPoints.swift */,
 				3304B5B12DC293910020A132 /* HTTPMethods.swift */,
 				3304B5AE2DC293490020A132 /* HTTPResponseCodes.swift */,
@@ -398,13 +397,6 @@
 				33CF180B2DC95BBF0002AD5A /* TransformationCollectionViewCell.xib */,
 			);
 			path = TransformationCollectionCell;
-			sourceTree = "<group>";
-		};
-		33CF18122DC95F340002AD5A /* TransformationsNetwork */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = TransformationsNetwork;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

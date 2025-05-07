@@ -18,3 +18,17 @@ final class TransformationsRepository: TransformationsRepositoryProtocol {
         return await networkTransformations.getTransformations(heroId: heroId)
     }
 }
+
+// MARK: - TransfromationRepositoryFake
+final class TransformationsRepositoryFake: TransformationsRepositoryProtocol {
+    private let fakeData: [TransformationsModel]
+
+    init(fakeData: [TransformationsModel] = []) {
+        self.fakeData = fakeData
+    }
+
+    func getTransformations(heroId: String) async -> [TransformationsModel] {
+        // Filtra las transformaciones por heroId en los datos falsos
+        return fakeData.filter { $0.hero?.id == heroId }
+    }
+}
