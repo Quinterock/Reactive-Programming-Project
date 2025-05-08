@@ -64,19 +64,3 @@ final class FakeHeroUseCase {
     }
 }
 
-//final class FakeHeroUseCase: HeroUseCaseProtocol {
-//    func getHero(by id: String) async -> HerosModel? {
-//        let allHeros = await repo.getHeros(filter: "")
-//        return allHeros.first(where: { $0.id == id })
-//    }
-//    
-//    var repo: HerosRepositoryProtocol
-//    
-//    init(repo: HerosRepositoryProtocol = HerosRepositoryFake()) {
-//        self.repo = repo
-//    }
-//    
-//    func getHeros(filter: String) async -> [HerosModel] {
-//        return await repo.getHeros(filter: filter)
-//    }
-//}
