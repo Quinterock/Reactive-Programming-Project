@@ -36,16 +36,16 @@ final class HeroUseCaseTests: XCTestCase {
         XCTAssertEqual(heroes[1].name, "Vegeta", "El segundo héroe debe ser Vegeta.")
     }
     
-//    func testGetHeros_withFilter() async {
-//        // GIVEN: Un filtro que coincida con un héroe en los datos simulados
-//        let filter = "Goku"
-//        
-//        // WHEN: Se llama al método getHeros del FakeHeroUseCase
-//        let heroes = await fakeHeroUseCase.getHeros(filter: filter)
-//        
-//        // THEN: Verifica que solo se devuelvan los héroes que coinciden con el filtro
-//        XCTAssertEqual(heroes.count, 1, "Debe haber 1 héroe que coincida con el filtro.")
-//        print("Héroes: \(heroes)")
-//        XCTAssertEqual(heroes[0].name, "Goku", "El héroe devuelto debe ser Goku.")
-//    }
+    func testGetHeros_withFilter() async {
+        // GIVEN: Un filtro que coincida con un héroe en los datos simulados
+        let filter = "Goku"
+        
+        // WHEN: Se llama al método getHeros del FakeHeroUseCase
+        let heroes = await fakeHeroUseCase.getHeros(filter: filter)
+        
+        // THEN: Verifica que solo se devuelvan los héroes que coinciden con el filtro
+        XCTAssertEqual(heroes.count, 1, "Debe haber 1 héroe que coincida con el filtro.")
+        print("Héroes: \(heroes)")
+        XCTAssertEqual(heroes[0].name, "Goku", "El héroe devuelto debe ser Goku.")
+    }
 }

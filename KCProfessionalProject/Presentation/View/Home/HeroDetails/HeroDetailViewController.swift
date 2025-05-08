@@ -107,3 +107,18 @@ extension HeroDetailViewController {
         present(alert, animated: true, completion: nil)
     }
 }
+
+extension HeroDetailViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+//        let width = collectionView.bounds.width / 1 - 100 // Dos celdas por fila con un margen de 10
+//        return CGSize(width: width, height: width + 100) // Ajusta la altura según el contenido
+        let width = collectionView.bounds.width * 1 // Ocupar el 80% del ancho del CollectionView
+        let height: CGFloat = 300 // Altura deseada para las celdas
+        return CGSize(width: width, height: height)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 20 // Espaciado entre filas
+    }
+}
+

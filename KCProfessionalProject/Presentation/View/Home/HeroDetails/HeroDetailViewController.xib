@@ -29,7 +29,7 @@
                     </constraints>
                 </imageView>
                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="jF5-MB-b3r">
-                    <rect key="frame" x="12" y="334" width="369" height="200"/>
+                    <rect key="frame" x="12" y="326" width="369" height="200"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="200" id="FQ7-Ue-QVR"/>
@@ -46,9 +46,8 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="zo8-Ij-oDp">
-                    <rect key="frame" x="0.0" y="690" width="393" height="128"/>
-                    <color key="backgroundColor" systemColor="systemRedColor"/>
-                    <color key="tintColor" systemColor="systemRedColor"/>
+                    <rect key="frame" x="0.0" y="534" width="393" height="272"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="7RE-pJ-ZVd">
                         <size key="itemSize" width="128" height="128"/>
                         <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -60,16 +59,16 @@
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="jF5-MB-b3r" firstAttribute="top" secondItem="lHj-Eg-dQt" secondAttribute="bottom" constant="16" id="1ki-dP-6AK"/>
+                <constraint firstItem="jF5-MB-b3r" firstAttribute="top" secondItem="lHj-Eg-dQt" secondAttribute="bottom" constant="8" id="1ki-dP-6AK"/>
                 <constraint firstItem="OM8-Q6-g1Q" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="HUy-aD-Fwt"/>
-                <constraint firstItem="zo8-Ij-oDp" firstAttribute="top" secondItem="jF5-MB-b3r" secondAttribute="bottom" constant="156" id="KtD-HA-9yK"/>
+                <constraint firstItem="zo8-Ij-oDp" firstAttribute="top" secondItem="jF5-MB-b3r" secondAttribute="bottom" constant="8" id="KtD-HA-9yK"/>
                 <constraint firstItem="jF5-MB-b3r" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="12" id="MIr-Du-qWS"/>
                 <constraint firstItem="OM8-Q6-g1Q" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="N2S-9a-KaW"/>
                 <constraint firstItem="zo8-Ij-oDp" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="NUE-VU-giP"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="jF5-MB-b3r" secondAttribute="trailing" constant="12" id="Ncl-Is-PiP"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="lHj-Eg-dQt" secondAttribute="trailing" constant="16" id="Vov-yT-HZf"/>
                 <constraint firstItem="lHj-Eg-dQt" firstAttribute="top" secondItem="OM8-Q6-g1Q" secondAttribute="bottom" constant="16" id="g7T-Hl-DL0"/>
-                <constraint firstItem="zo8-Ij-oDp" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="hqW-s0-UX5"/>
+                <constraint firstItem="zo8-Ij-oDp" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" constant="-12" id="hqW-s0-UX5"/>
                 <constraint firstItem="lHj-Eg-dQt" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="pe4-dx-eB8"/>
                 <constraint firstItem="OM8-Q6-g1Q" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="20" id="rFZ-zx-eQ4"/>
                 <constraint firstItem="OM8-Q6-g1Q" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="wbc-h6-eHw"/>
@@ -84,9 +83,6 @@
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemRedColor">
-            <color red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
