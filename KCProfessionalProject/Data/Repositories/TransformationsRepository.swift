@@ -13,10 +13,18 @@ final class TransformationsRepository: TransformationsRepositoryProtocol {
     init(networkTransformations: NetworkTransformationsProtocol = NetworkTransformations()) {
         self.networkTransformations = networkTransformations
     }
-
+    
     func getTransformations(heroId: String) async -> [TransformationsModel] {
-        return await networkTransformations.getTransformations(heroId: heroId)
-    }
+            // Obtén todas las transformaciones desde la red
+            let allTransformations = await networkTransformations.getTransformations(heroId: heroId)
+            
+            // Filtra las transformaciones localmente si la API no lo hace
+            return allTransformations.filter { $0.hero?.id == heroId }
+        }
+    
+//    func getTransformations(heroId: String) async -> [TransformationsModel] {
+//        return await networkTransformations.getTransformations(heroId: heroId)
+//    }
 }
 
 // MARK: - TransfromationRepositoryFake

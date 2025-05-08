@@ -34,14 +34,14 @@ final class NetworkHeros: NetworkHerosProtocol{
             let (data, response) = try await URLSession.shared.data(for: request)
 
             // Imprimir el JSON crudo recibido
-                        if let rawJSON = String(data: data, encoding: .utf8) {
-                            print("JSON crudo recibido del servidor: \(rawJSON)")
-                        }
+//                        if let rawJSON = String(data: data, encoding: .utf8) {
+//                            print("JSON crudo recibido del servidor: \(rawJSON)")
+//                        }
             // Asegurarnos que la respuesta sea HTTPURLResponse y que sea correcta
             if let resp = response  as? HTTPURLResponse {
                 if resp.statusCode == HTTPResponseCodes.SUCCESS {
                     modelReturn = try! JSONDecoder().decode([HerosModel].self, from: data)
-                    print(modelReturn, data)
+//                    print(modelReturn, data)
                 }
             }
             

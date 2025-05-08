@@ -18,5 +18,5 @@ struct TransformationsModel: Codable {
 
 // Filter the request of Transformations by name
 struct TransformationModelRequest: Codable {
-    let name: String
+    let id: String
 }

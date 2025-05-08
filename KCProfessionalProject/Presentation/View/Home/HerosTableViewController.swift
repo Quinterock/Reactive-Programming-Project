@@ -27,9 +27,9 @@ class HerosTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = NSLocalizedString("heros-title", comment: "")
-        tableView.register(UINib(nibName: "HeroTableViewCell", bundle: nil), forCellReuseIdentifier: "Cell") // Configuración de la tabla
-  //      tableView.refreshControl = UIRefreshControl()
- //       tableView.refreshControl?.addTarget(self, action: #selector(cellPullToRefresh), for: .valueChanged)
+        tableView.register(UINib(nibName: "HeroTableViewCell", bundle: nil), forCellReuseIdentifier: "Cell") //
+        
+        // Botón cerrar sesión
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(
             title: NSLocalizedString("close", comment: "Logout"),
             style: .plain,
@@ -37,7 +37,6 @@ class HerosTableViewController: UITableViewController {
             action: #selector(HerosTableViewController.closeSession)
         )
         configViewModel()
-//        
 //        Task {
 //            await vm.loadHeros()
 //        }
@@ -85,5 +84,4 @@ class HerosTableViewController: UITableViewController {
         let detailViewController = HeroDetailViewController(viewModel: detailViewModel)
         navigationController?.pushViewController(detailViewController, animated: true)
     }
-
 }

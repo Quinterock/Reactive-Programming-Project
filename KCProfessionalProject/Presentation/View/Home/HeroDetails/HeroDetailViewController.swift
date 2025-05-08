@@ -33,6 +33,7 @@ class HeroDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = NSLocalizedString("hero-details", comment: "Detalles del Héroe")
+        setupUI()
         setupBindings()
         Task {
             await viewModel.loadHeroDetails()
@@ -64,15 +65,15 @@ class HeroDetailViewController: UIViewController {
         
         // Vincular transformaciones
                 viewModel.$transformations
-                    .receive(on: DispatchQueue.main)
+                    .receive(on: DispatchQueue.main) // Asegura que las actualizaciones ocurran en el hilo principal
                     .sink { [weak self] _ in
-                        self?.transformationCollectionView.reloadData()
+                        self?.transformationCollectionView.reloadData() // Recargar el collection view para reflejar cambios
                     }
                     .store(in: &cancellables)
 
                 // Manejar errores
                 viewModel.$errorMessage
-                    .receive(on: DispatchQueue.main)
+                    .receive(on: DispatchQueue.main) // Asegura que las actualizaciones ocurran en el hilo principal
                     .sink { [weak self] errorMessage in
                         if let message = errorMessage {
                             self?.showErrorAlert(message: message)
@@ -85,6 +86,7 @@ class HeroDetailViewController: UIViewController {
 // MARK: - UICollectionView DataSource
 extension HeroDetailViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        print("---- Número de transformaciones: \(viewModel.transformations.count)")
         return viewModel.transformations.count
     }
 
@@ -105,19 +107,3 @@ extension HeroDetailViewController {
         present(alert, animated: true, completion: nil)
     }
 }
-
-//// MARK: - UICollectionView DataSource y Delegate
-//extension HeroDetailViewController: UICollectionViewDataSource, UICollectionViewDelegate {
-//    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-//        return viewModel.transformations.count
-//    }
-//
-//    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-//        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TransformationCollectionViewCell", for: indexPath) as? TransformationCollectionViewCell else {
-//            return UICollectionViewCell()
-//        }
-//        let transformation = viewModel.transformations[indexPath.row]
-//        cell.configure(with: transformation)
-//        return cell
-//    }
-//}

@@ -9,5 +9,8 @@ import Foundation
 
 protocol HerosRepositoryProtocol {
     func getHeros(filter: String) async -> [HerosModel]
+    
+    // Obtiene un héroe específico por su ID.
+    func getHero(by id: String) async -> HerosModel?
 }
 
