@@ -24,5 +24,4 @@ class TransformationCollectionViewCell: UICollectionViewCell {
                 transformationImageView.loadImageRemote(url: url)
             }
         }
-
 }

@@ -42,7 +42,7 @@ final class HerosRepositoryFake: HerosRepositoryProtocol {
         if filter.isEmpty {
             return fakeData
         } else {
-            return fakeData.filter { $0.name.localizedCaseInsensitiveContains(filter) }
+            return fakeData.filter { $0.name?.localizedCaseInsensitiveContains(filter) ?? false }
         }
     }
     
@@ -53,39 +53,3 @@ final class HerosRepositoryFake: HerosRepositoryProtocol {
     }
 }
 
-
-//import Foundation
-//
-//// El Repositorio es el vinculo entre el dominio y capa de datos
-//
-//final class HerosRepository: HerosRepositoryProtocol {
-//    func getHero(by id: String) async -> HerosModel? {
-//        <#code#>
-//    }
-//    
-//    private var network: NetworkHerosProtocol
-//    
-//    init(network: NetworkHerosProtocol) {
-//        self.network = network
-//    }
-//    
-//    func getHeros(filter: String) async -> [HerosModel] {
-//        return await network.getHeros(filter: filter)
-//    }
-//}
-//
-//final class HerosRepositoryFake: HerosRepositoryProtocol {
-//    func getHero(by id: String) async -> HerosModel? {
-//        <#code#>
-//    }
-//    
-//    private var network: NetworkHerosProtocol
-//    
-//    init(network: NetworkHerosProtocol = NetworkHerosMock()) {
-//        self.network = network
-//    }
-//    
-//    func getHeros(filter: String) async -> [HerosModel] {
-//        return await network.getHeros(filter: filter)
-//    }
-//}

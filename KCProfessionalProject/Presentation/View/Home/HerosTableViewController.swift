@@ -63,7 +63,12 @@ class HerosTableViewController: UITableViewController {
         
         let hero = self.vm.heros[indexPath.row]
         cell.heroTitleText.text = hero.name
-        cell.heroImageView.loadImageRemote(url: URL(string: hero.photo)!)
+        // Imagen de Héroe
+        if let photoUrl = hero.photo, let url = URL(string: photoUrl) {
+            cell.heroImageView.loadImageRemote(url: url)
+        } else {
+            cell.heroImageView.image = UIImage(named: "") // Imagen local por defecto
+        }
         cell.selectionStyle = .none
         return cell
     }

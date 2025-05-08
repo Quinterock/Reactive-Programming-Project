@@ -57,7 +57,7 @@ class HeroDetailViewController: UIViewController {
                 guard let hero = hero else { return }
                 self?.heroNameLabel.text = hero.name
                 self?.heroDescriptionLabel.text = hero.description
-                if let url = URL(string: hero.photo) {
+                if let url = URL(string: hero.photo ?? "") {
                     self?.heroImageView.loadImageRemote(url: url)
                 }
             }
